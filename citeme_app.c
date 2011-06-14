@@ -2,8 +2,11 @@
 #include <stdio.h>
 
 #include <citeme.h>
+#include <citeme_lib.h>
 
-// should be visible to the outside!
+/**
+  This global function should be visible for the outside!
+*/
 CitationError RegisterCitation( const CitationType _type, ... )
 {
    va_list ap; 
@@ -38,7 +41,7 @@ CitationError RegisterCitation( const CitationType _type, ... )
 }
 
 
-static CitationStruct _about = { "myname", "0.0", "BSD", "Alex", "HEllo, this is my library\nMy name is ...\n Verions is ....\nHave Fun!", "...some latex code..." };
+static CitationStruct _about = { "MainApplication", "0.0", "BSD", "Oleksandr", "Hi, this is an example _main_ application,\nwhich _provides_ the RegisterCitation interface\nIt also _uses_ the example library\nHave Fun!", "...some latex code0..." };
 
 static const char* _banner( const BannerType _type )
 {
@@ -76,7 +79,7 @@ static const char* _banner( const BannerType _type )
 
 
 
-int main ()
+int test1()
 {
    CitationError ret;
    // init citation DB.
@@ -108,5 +111,25 @@ int main ()
    else
      printf("Bad citation.... (error code: %d)\n", ret);
 
+   return ret;
+}
+
+
+
+int main ()
+{
+   int ret = 0;
+   
+   printf("Main banner: \n%s\n", _banner(GetBannerMessage) );
+
+   
+   printf("Setting up the main application...: \n");
+   /* let's init the much _needed_ library */
+   
+   ret = initme();
+   
+   
+   printf("That's it!\n");
+ 
    return ret;
 }

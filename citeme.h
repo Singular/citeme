@@ -69,6 +69,10 @@ typedef enum CitationType
  * 
  * Note that the application should copy the strings returened/provided by the library for later use.
  * 
+ * TODO: think about the following issues:
+ *  1. variable argument list may prevent wrapping it?
+ *  2. maybe a _variable_ (function pointer) would be better?
+ * 
  * \param [in] _type The citation format. see \ref CitationType for possible types.
  * \returns Ok = 0 if successful, and negative value if there is a failure. see \ref CitationErrors for possible codes
  *  */
