@@ -71,7 +71,7 @@ typedef enum CitationType
  * 
  * TODO: think about the following issues:
  *  1. variable argument list may prevent wrapping it?
- *  2. maybe a _variable_ (function pointer) would be better?
+ *  2. maybe a _variable_ (function pointer) would be better (e.g. due to Windows' limitations on dynamic libraries)?
  * 
  * \param [in] _type The citation format. see \ref CitationType for possible types.
  * \returns Ok = 0 if successful, and negative value if there is a failure. see \ref CitationErrors for possible codes
