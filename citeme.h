@@ -4,9 +4,6 @@
  * Authors: Oleksandr and Burcin
  */
 
-/* some usefull citation :) http://www.parashift.com/c++-faq-lite/mixing-c-and-cpp.html */
-
-
 #ifndef __CITE_ME_LIBRARY_PART_H__
 #define __CITE_ME_LIBRARY_PART_H__
 
@@ -14,8 +11,6 @@
 extern "C"
 {
 #endif
-
-// #include "citeme/common.h" // TODO: both enums should be in this common.h
 
 /** The structure to be filled in by a library and passed to \ref RegisterCitation */ 
 typedef struct CitationStruct
@@ -30,7 +25,7 @@ typedef struct CitationStruct
    
 
    
-/** Cpecifies the kind of date application want to know about the library, to be used with \ref BannerFunction */
+/** Specifies the kind of data application want to know about the library, to be used with \ref BannerFunction */
 typedef enum BannerType
 {
    GetName, /**< library name or ID */
@@ -57,8 +52,8 @@ typedef enum CitationError
 /** input formats understandable by \ref RegisterCitation */
 typedef enum CitationType
 {
-   ViaStuct, /**< use a struct */	
-   ViaBanner, /**< use a banner function */	
+   ViaStuct, /**< argument is (CitationStruct*) */	
+   ViaBanner, /**< argument is BannerFunction */	
    Otherwise /**< use some other method? */
 } CitationType;
   

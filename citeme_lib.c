@@ -1,11 +1,22 @@
-#include <stdarg.h>
-#include <stdio.h>
-
 #include <citeme.h>
 
+/* _local_ library citation data */
+static CitationStruct _about =
+{
+  "citeme_lib",
+  "0.0",
+  "BSD",
+  "Oleksandr",
+  "\n=========================================================================\n"
+  "Hi, this is an example library which wants some credits...\n"
+  "If you want to use me, please provide the RegisterCitation global function!\n"
+  "Have Fun!\n",
+  "...some latex code..."
+};
 
-static CitationStruct _about = { "citeme_lib", "0.0", "BSD", "Oleksandr", "Hi, this is an example library, \nwhich wants some credits...\nIf you want to use me, please provide the RegisterCitation global function!\nHave Fun!", "...some latex code..." };
+#include <stdio.h>
 
+/* _local_ library citation data (available via a banner) */
 static const char* _banner( const BannerType _type )
 {
    switch (_type)
@@ -37,7 +48,6 @@ static const char* _banner( const BannerType _type )
     }
    }
 }
-
 
 
 /** Please call the following init function for settin things up... */
