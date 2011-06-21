@@ -2,22 +2,18 @@
 
 /* #define NO_CITATION_DATA */
 #include <citeme.h>
+#include <stdio.h>
 
 /* _local_ library citation data */
 static const CitationStruct _about =
 {
-  "citeme_lib",
-  "0.0",
-  "BSD",
-  "Oleksandr",
-  "\n=========================================================================\n"
-  "Hi, this is an example library which wants some credits...\n"
-  "If you want to use me, please provide the RegisterCitation global function!\n"
-  "Have Fun!\n",
-  "...some latex code..."
+  "mylib", /* SW name */
+  "0.0",   /* SW version */
+  "BSD",   /* SW license */
+  "Oleksandr", /* SW authors */
+  "\n\n\nHi, this is an example library, which wants some credits...\nHave Fun!\n\n", /* SW banner */
+  "@article{CITETHIS,title={Citeme for Math. SW},year={2011},author = {O.Motsak}}" /* Bibitem */
 };
-
-#include <stdio.h>
 
 /* _local_ library citation data (available via a banner) */
 static const char* _banner( const BannerType _type )

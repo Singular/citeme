@@ -81,8 +81,19 @@ typedef enum CitationError CitationError;
  * 
  * This global function is meant to be used by anyone willing to _provide_ a citation data. 
  * It must be exported from the _main_ application (the _only_ data _collecting_ party).
- *
- * An example for the _real_ data collecting implemention is provided.
+ * 
+ * One can use it as follows (more can be found in \c citeme_provider.c):
+ * 
+ * \code
+ * static const CitationStruct _about_me =
+ * {
+ *   "mylib", NULL, NULL, "me!",
+ *   "\n\n\nHi, this is an example library, which wants some credits... Have Fun!\n\n\n",
+ *   "@article{REF, title = {mylib}, year = {2011}, author = {Me}}"
+ * };
+ * CitationError ret = RegisterCitation(ViaStuct, &_about_me);
+ * if( ret < Ok ) // Bad citation... Error code: ret... Help me!...
+ * \endcode 
  *
  * Any _shady_ application may choose to ignore all the provided data
  * just by proving it, for example, as follows:
@@ -100,7 +111,10 @@ typedef enum CitationError CitationError;
  * \endcode
  *
  * \note
- * Note that the application should copy the strings returened/provided
+ * We are also going to provide a legacy implemention for data collecting.
+ *
+ * \note
+ * Note that the collector party should copy the strings returened/provided
  * by the library, whenever they are stored for later use.
  *
  * TODO: think about the following issues: 
