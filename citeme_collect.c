@@ -88,7 +88,7 @@ static const char* _banner( const BannerType _type )
 
 
 
-int test1()
+static int test1()
 {
    CitationError ret;
    // init citation DB.
@@ -135,7 +135,7 @@ int main ()
    printf("Setting up the main application...: \n");
    /* let's init the much _needed_ library */
    
-   ret = initme();
+   ret = initme(); /**< Init the data provider (used library) */
    
    
    printf("That's it!\n");
