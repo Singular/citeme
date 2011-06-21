@@ -4,6 +4,11 @@
 #include <citeme.h>
 #include <citeme_lib.h>
 
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 /**
   This global function should be visible for the outside!
 */
@@ -39,6 +44,10 @@ CitationError RegisterCitation( const CitationType _type, ... )
    va_end(ap);
    return retVal;
 }
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
+
 
 
 static CitationStruct _about = { "MainApplication", "0.0", "BSD", "Oleksandr", "Hi, this is an example _main_ application,\nwhich _provides_ the RegisterCitation interface\nIt also _uses_ the example library\nHave Fun!", "...some latex code0..." };
