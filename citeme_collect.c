@@ -5,13 +5,20 @@
 #include <citeme_lib.h>
 
 
+
+
+
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
+
+/* CitationError RegisterCitation(const CitationType _type,...){ return Ok; } */
+
 /**
   This global function should be visible for the outside!
-*/
+ */
 CitationError RegisterCitation( const CitationType _type, ... )
 {
    va_list ap; 
@@ -44,6 +51,7 @@ CitationError RegisterCitation( const CitationType _type, ... )
    va_end(ap);
    return retVal;
 }
+
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */

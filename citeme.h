@@ -84,9 +84,19 @@ typedef enum CitationError CitationError;
  *
  * An example for the _real_ data collecting implemention is provided.
  *
- * Any _shady_ application may choose to ignore all the provided data just by proving it as follows:
+ * Any _shady_ application may choose to ignore all the provided data
+ * just by proving it, for example, as follows:
+ * 
  * \code
- * extern "C" enum CitationError RegisterCitation(enum CitationType,...){}
+ * #ifdef __cplusplus
+ * extern "C" {
+ * #endif
+ *
+ * CitationError RegisterCitation(const CitationType _type,...){ return Ok; }
+ * 
+ * #ifdef __cplusplus
+ * }
+ * #endif 
  * \endcode
  *
  * \note

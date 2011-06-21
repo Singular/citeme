@@ -4,7 +4,7 @@
 #include <citeme.h>
 
 /* _local_ library citation data */
-static CitationStruct _about =
+static const CitationStruct _about =
 {
   "citeme_lib",
   "0.0",
