@@ -1,3 +1,6 @@
+/* just uncomment the following #define in order to stop providing any citation data: */
+
+/* #define NO_CITATION_DATA */
 #include <citeme.h>
 
 /* _local_ library citation data */
@@ -50,12 +53,14 @@ static const char* _banner( const BannerType _type )
 }
 
 
-/** Please call the following init function for settin things up... */
+/** Please call the following init function for setting things up... */
 int initme()
 {
    CitationError ret;
 
+   /* case 1 */
    printf("Trying to cite with a struct: \n");
+
    ret = RegisterCitation(ViaStuct, &_about);
 
    if( ret >= Ok )
@@ -64,6 +69,8 @@ int initme()
      printf("Bad citation.... (error code: %d)\n", ret);
 
 
+   
+   /* case 2 */
    printf("Trying to cite with a banner: \n");
    
    ret = RegisterCitation(ViaBanner, &_banner);
@@ -73,6 +80,8 @@ int initme()
    else
      printf("Bad citation.... (error code: %d)\n", ret);
 
+   
+   /* case 3 */
    printf("Trying to cite in some otherway: \n");
    
    ret = RegisterCitation(Otherwise);
